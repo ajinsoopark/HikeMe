@@ -62,19 +62,19 @@ class TrailMain extends Component {
     }
 
     render () {
-        const { name, 
-                summary, 
-                difficulty, 
-                starRating, 
-                ratingCount, 
-                trailLength, 
-                location, 
-                imageUrl, 
-                conditionDetails, 
-                conditionStatus, 
-                conditionDate, 
-                trailUrl, 
-                ascent, 
+        const { name,
+                summary,
+                difficulty,
+                starRating,
+                ratingCount,
+                trailLength,
+                location,
+                imageUrl,
+                conditionDetails,
+                conditionStatus,
+                conditionDate,
+                trailUrl,
+                ascent,
                 elevation } = this.state
         console.log(this.state)
         return (
@@ -82,7 +82,7 @@ class TrailMain extends Component {
                 {/* <TrailImg
                  imageUrl={imageUrl}
                  trailUrl={trailUrl}/>
-                <Info 
+                <Info
                  name={name}
                  summary={summary}
                  trailLength={trailLength}
@@ -92,7 +92,7 @@ class TrailMain extends Component {
                  conditionDetails={conditionDetails}
                  ascent={ascent}
                  elevation={elevation}/>
-                <StarRating
+               <StarRating
                  starRating={starRating}
                  ratingCount={ratingCount}/>
                 <Difficulty
