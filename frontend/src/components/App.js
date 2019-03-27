@@ -1,5 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import '../App.css';
+
+import Home from '../components/Home/home'
+import TrailMain from '../components/TreylPage/treylMain'
+import NavBar from '../components/navbar'
 
 class App extends Component {
   render() {
