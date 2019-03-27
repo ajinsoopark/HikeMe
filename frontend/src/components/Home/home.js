@@ -65,7 +65,7 @@ export default class Home extends Component {
       <React.Fragment>
         <div className="main-container">
           <h1>Home</h1>
-          <SideBar/>
+          <SideBar props={this.state.markers}/>
           <Map/>
         </div>
 
