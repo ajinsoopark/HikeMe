@@ -16,8 +16,9 @@ const Info = (props) => {
         </div>
           <div className="trail-numbers">
             <p className='trail-length'>Trail Length: {trailLength} miles</p>
-            <p className='trail-ascend'>Ascend:{ascent} feet</p>
+            <p className='trail-ascend'>Ascend: {ascent} feet</p>
             <p className ='trail-elevation'>Elevation: {elevation} feet</p>
+            <h2> Current Trail Conditions</h2>
             <p className='condition-status'>{conditionStatus}</p>
             <p className='condition-details'>{conditionDetails}</p>
             <p className='condition-date'>{conditionDate}</p>
