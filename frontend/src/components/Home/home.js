@@ -61,12 +61,13 @@ export default class Home extends Component {
   };
 
   render() {
+    const {markers, latitude, longitude, userIP} = this.state
     return (
       <React.Fragment>
         <div className="main-container">
           <h1>Home</h1>
           <SideBar props={this.state.markers}/>
-          <Map/>
+          <Map markers={markers} latitude={latitude} longitude={longitude} userIP={userIP}/>
         </div>
 
       </React.Fragment>
