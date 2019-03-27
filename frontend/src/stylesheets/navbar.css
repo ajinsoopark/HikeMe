@@ -5,5 +5,9 @@
 
 .homeImg {
     height: 7vh;
-    width: 4.5vw;
+    width: 4.3vw;
+}
+
+.navBarContainer {
+    position: fixed;
 }
