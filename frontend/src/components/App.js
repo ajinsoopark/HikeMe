@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import '../App.css';
 
 import Home from '../components/Home/home'
-import TrailMain from '../components/TreylPage/treylMain'
+import TrailMain from '../components/TrailPage/trailMain'
 import NavBar from '../components/navbar'
 
 class App extends Component {
