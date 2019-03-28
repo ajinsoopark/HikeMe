@@ -83,9 +83,14 @@ export default class Home extends Component {
     // console.log("coorStr=>",output,this.state.markers);
   }
 
-  handleSort = () => {
+  handleSort = (e) => {
     // dif dis len
-
+    switch(e.target.value) {
+      case "dif":
+      case "dis":
+      case "len":
+      default: break;
+    }
   }
 
   render() {
