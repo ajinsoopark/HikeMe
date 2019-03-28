@@ -7,11 +7,11 @@ import {
 } from "react-google-maps";
 
 const Map = props => {
-  let { markers, latitude, longitude } = props;
+  let { markers, latitude, longitude, distanceChoice } = props;
   const MyMapComponent = withScriptjs(
     withGoogleMap(props => (
       <GoogleMap
-        defaultZoom={10}
+        defaultZoom={distanceChoice < 50 ? 10 : 7}
         defaultCenter={{ lat: Number(latitude), lng: Number(longitude) }}
       >
         {markers.map(marker => {
