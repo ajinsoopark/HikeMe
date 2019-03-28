@@ -4,6 +4,8 @@ const Info = (props) => {
     const {name, summary, trailLength, location, elevation, conditionDate, conditionStatus, conditionDetails, ascent} = props
   return (
     <>
+      {
+     !props ? <h1 className='error'>Trail Not Found</h1> :
       <div className="info-container">
         <div className="trail-name">
           <h1>{name}</h1>
@@ -25,6 +27,7 @@ const Info = (props) => {
           </div>
 
       </div>
+    }
     </>
   )
 }

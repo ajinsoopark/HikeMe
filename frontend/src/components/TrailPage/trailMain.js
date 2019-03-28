@@ -79,7 +79,7 @@ class TrailMain extends Component {
         console.log(this.state)
         return (
             <div className='trailMainContainer'>
-              {/*  <TrailImg
+            {/*<TrailImg
                  imageUrl={imageUrl}
                  trailUrl={trailUrl}/>
                <Info
