@@ -4,7 +4,7 @@ import axios from "axios";
 import Map from "./map.js";
 import SideBar from "./sidebar.js";
 import DistanceMenu from "./distanceMenu.js";
-// import SortMenu from './sortMenu.js';
+import SortMenu from './sortMenu.js';
 
 import "../../css/Home.css";
 
@@ -144,6 +144,7 @@ export default class Home extends Component {
             distanceChoice={distanceChoice}
           />
           <DistanceMenu selectDistance={this.selectDistance} />
+          <SortMenu handleSort={this.handleSort} />
           <p>latitude: {this.state.latitude}</p>
           <p>longitude: {this.state.longitude}</p>
         </div>
