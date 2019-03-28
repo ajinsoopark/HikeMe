@@ -5,6 +5,7 @@ import Home from '../components/Home/home'
 import TrailMain from '../components/TrailPage/trailMain'
 import NavBar from '../components/navbar'
 
+import '../css/App.css'
 class App extends Component {
   render() {
     return (

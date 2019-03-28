@@ -178,8 +178,6 @@ export default class Home extends Component {
           />
           <DistanceMenu selectDistance={this.selectDistance} />
           <SortMenu handleSort={this.handleSort} />
-          <p>latitude: {this.state.latitude}</p>
-          <p>longitude: {this.state.longitude}</p>
         </div>
       </React.Fragment>
     );
