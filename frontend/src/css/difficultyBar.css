@@ -1,7 +1,7 @@
 .levelBar {
     display: flex;
     flex-direction: row;
-    height: 3vh;
+    height: 2.7vh;
     width: 8vw;
     border: 2px solid black;
 }
@@ -9,24 +9,29 @@
 .level1 {
     background-image: linear-gradient(to right, #FEEC35, #FBCC30);
     width: 20%;
+    height: 100%;
 }
 
 .level2 {
     background-image: linear-gradient(to right, #FBCC30, #F29629);
     width: 20%;
+    height: 100%;
 }
 
 .level3 {
     background-image: linear-gradient(to right, #F29629, #EA5C28);
     width: 20%;
+    height: 100%;
 }
 
 .level4 {
     background-image: linear-gradient(to right, #EA5C28, #E3312B);
     width: 20%;
+    height: 100%;
 }
 
 .level5 {
     background-image: linear-gradient(to right, #E3312B, #E2212D);
     width: 20%;
+    height: 100%;
 }
