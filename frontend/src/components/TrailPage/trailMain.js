@@ -4,7 +4,8 @@ import axios from 'axios';
 import Info from './info'
 // import TrailImg from './trailImg'
 // import StarRating from './starRating'
-// import Difficulty from './difficulty'
+import Difficulty from './difficulty'
+import FocusMap from './focusMap'
 
 import '../../stylesheets/trailMain.css'
 
@@ -25,7 +26,9 @@ class TrailMain extends Component {
             conditionDate: '',
             trailUrl: '',
             ascent: '',
-            elevation: ''
+            elevation: '',
+            latitude: '',
+            longitude: ''
         }
     }
 
@@ -55,7 +58,9 @@ class TrailMain extends Component {
                     conditionDate: trail.conditionDate,
                     trailUrl: trail.url,
                     ascent: trail.ascent,
-                    elevation: trail.high
+                    elevation: trail.high,
+                    latitude: trail.latitude,
+                    longitude: trail.longitude
                 })
             }).catch(err => console.log(err))
         }
@@ -75,9 +80,11 @@ class TrailMain extends Component {
                 conditionDate, 
                 trailUrl, 
                 ascent, 
-                elevation } = this.state
-        console.log(this.state)
-        return (
+                elevation,
+                latitude,
+                longitude } = this.state
+
+            return (
             <div className='trailMainContainer'>
                 {/* <TrailImg
                  imageUrl={imageUrl}
@@ -91,12 +98,15 @@ class TrailMain extends Component {
                  conditionStatus={conditionStatus}
                  conditionDetails={conditionDetails}
                  ascent={ascent}
-                 elevation={elevation}/>
-                <StarRating
-                 starRating={starRating}
-                 ratingCount={ratingCount}/>
+                 elevation={elevation}/> */}
                 <Difficulty
-                 difficulty={difficulty}/>  */}
+                 difficulty={difficulty}/> 
+                {/* <StarRating
+                 starRating={starRating}
+                 ratingCount={ratingCount}/> */}
+                <FocusMap
+                 longitude={longitude}
+                 latitude={latitude}/>
             </div>
         )
     }
