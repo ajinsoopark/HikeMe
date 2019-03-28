@@ -124,9 +124,9 @@ export default class Home extends Component {
     await this.fetchLocation();
     await this.getDistanceData(this.coordinateString());
   };
-  
+
   render() {
-    const { markers, latitude, longitude, userIP, distances } = this.state;
+    const { markers, latitude, longitude, userIP, distances, distanceChoice } = this.state;
     return (
       <React.Fragment>
         <div className="home-main-container">
@@ -141,6 +141,7 @@ export default class Home extends Component {
             latitude={latitude}
             longitude={longitude}
             userIP={userIP}
+            distanceChoice={distanceChoice}
           />
           <DistanceMenu selectDistance={this.selectDistance} />
           <p>latitude: {this.state.latitude}</p>
