@@ -9,10 +9,10 @@ class App extends Component {
   render() {
     return (
       <>
-      <Route component={ NavBar }/>
       <div className='mainContainer'>
         <Switch>
-            {/* <Route exact path='/' component={ Home }/> */}
+            <Route exact path='/' component={ Home }/>
+
             <Route path='/trail/:id' component={ TrailMain }/>
         </Switch>
       </div>
@@ -22,3 +22,7 @@ class App extends Component {
 }
 
 export default App
+
+// add it in the end :
+// <Route component={ NavBar }/>
+// <Route path='/trail/:id' component={ TrailMain }/>
