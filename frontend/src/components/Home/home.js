@@ -4,6 +4,7 @@ import axios from "axios";
 import Map from "./map.js";
 import SideBar from "./sidebar.js";
 import DistanceMenu from "./distanceMenu.js";
+import SearchBox from "./searchbox.js";
 // import SortMenu from './sortMenu.js';
 
 import "../../css/Home.css";
@@ -17,7 +18,8 @@ export default class Home extends Component {
       longitude: "",
       userIP: "",
       distances: [],
-      distanceChoice: 10
+      distanceChoice: 10,
+      searchInput: ""
     };
   }
 
@@ -125,11 +127,52 @@ export default class Home extends Component {
     await this.getDistanceData(this.coordinateString());
   };
 
+  searchCoordinates = (event) => {
+    event.preventDefault()
+    axios
+      .get(
+        `https://maps.googleapis.com/maps/api/geocode/json?address=${this.state.searchInput}&key=AIzaSyAm8VcTZZ0P2oJCVLZ4ZDy5RK2UYxMxDlc`
+      )
+      .then(res => {
+        console.log(res)
+        this.setState({
+          latitude: res.data.results[0].geometry.location.lat,
+          longitude: res.data.results[0].geometry.location.lng,
+          searchInput: ""
+        });
+      })
+      .then(() => {
+        this.fetchLocation().then(() => {
+          this.getDistanceData(this.coordinateString());
+        });
+      });
+  };
+
+  handleSearchInput = event => {
+    event.preventDefault();
+    console.log("target!!!!", event.target.value);
+    this.setState({
+      searchInput: event.target.value
+    });
+  };
+
   render() {
-    const { markers, latitude, longitude, userIP, distances, distanceChoice } = this.state;
+    const {
+      markers,
+      latitude,
+      longitude,
+      userIP,
+      distances,
+      distanceChoice
+    } = this.state;
     return (
       <React.Fragment>
         <div className="home-main-container">
+          <SearchBox
+            handleSearchInput={this.handleSearchInput}
+            searchCoordinates={this.searchCoordinates}
+            searchInput={this.state.searchInput}
+          />
           <SideBar
             distances={distances}
             trails={markers}
@@ -144,8 +187,6 @@ export default class Home extends Component {
             distanceChoice={distanceChoice}
           />
           <DistanceMenu selectDistance={this.selectDistance} />
-          <p>latitude: {this.state.latitude}</p>
-          <p>longitude: {this.state.longitude}</p>
         </div>
       </React.Fragment>
     );
