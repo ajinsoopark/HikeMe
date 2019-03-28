@@ -13,7 +13,7 @@ class SearchBox  extends React.Component {
     return (
       <div className="searchbox_input">
       <form onSubmit={this.props.searchCoordinates}>
-      <input value={this.props.searchInput} name="searchInput" onChange={this.props.handleSearchInput} />
+      <input value={this.props.searchInput} name="searchInput" placeholder="enter zipcode" onChange={this.props.handleSearchInput} />
       <button type="submit" >Search</button>
       </form>
       </div>
