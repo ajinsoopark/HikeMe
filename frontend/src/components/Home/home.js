@@ -176,8 +176,10 @@ export default class Home extends Component {
             userIP={userIP}
             distanceChoice={distanceChoice}
           />
-          <DistanceMenu selectDistance={this.selectDistance} />
-          <SortMenu handleSort={this.handleSort} />
+          <div className="home-menus-container">
+            <DistanceMenu selectDistance={this.selectDistance} />
+            <SortMenu handleSort={this.handleSort} />
+          </div>
         </div>
       </React.Fragment>
     );
