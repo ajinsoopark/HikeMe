@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 
-import Info from './info'
+// import Info from './info'
 // import TrailImg from './trailImg'
 // import StarRating from './starRating'
 import Difficulty from './difficulty'
@@ -38,8 +38,8 @@ class TrailMain extends Component {
 
     fetchTrailInfo () {
         if (this.props) {
-            let trailId = this.props.match.path.id
-            trailId = 7000108
+            let trailId = this.props.match.params.id
+            // trailId = 7000108
             axios.get(`https://www.hikingproject.com/data/get-trails-by-id?ids=${trailId}&key=200430061-384fefbb8ceed621af7cea7e5ab597b2`)
             .then(res => {
                 console.log(res.data.trails)
@@ -67,6 +67,7 @@ class TrailMain extends Component {
     }
 
     render () {
+
         const { name, 
                 summary, 
                 difficulty, 
@@ -86,10 +87,10 @@ class TrailMain extends Component {
 
             return (
             <div className='trailMainContainer'>
-                {/* <TrailImg
+               <TrailImg
                  imageUrl={imageUrl}
                  trailUrl={trailUrl}/>
-                <Info 
+               <Info
                  name={name}
                  summary={summary}
                  trailLength={trailLength}
@@ -98,12 +99,15 @@ class TrailMain extends Component {
                  conditionStatus={conditionStatus}
                  conditionDetails={conditionDetails}
                  ascent={ascent}
-                 elevation={elevation}/> */}
+                 elevation={elevation}/>
+               <StarRating
+                 starRating={starRating}
+                 ratingCount={ratingCount}/>
                 <Difficulty
                  difficulty={difficulty}/> 
-                {/* <StarRating
+                <StarRating
                  starRating={starRating}
-                 ratingCount={ratingCount}/> */}
+                 ratingCount={ratingCount}/>
                 <FocusMap
                  longitude={longitude}
                  latitude={latitude}/>
