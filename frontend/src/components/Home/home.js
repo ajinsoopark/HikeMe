@@ -16,11 +16,13 @@ export default class Home extends Component {
       latitude: "",
       longitude: "",
       userIP: "",
-      distances: []
+      distances: [],
+      distanceChoice: 10
     }
   }
 
   componentDidMount() {
+    console.log("triggered did mount")
     axios
        .get("https://jsonip.com/")
        .then(res => {
@@ -50,6 +52,7 @@ export default class Home extends Component {
          console.log(err)
        })
   }
+
   getDistanceData = (string) => {
     let {longitude, latitude} = this.state;
      axios.get(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${latitude},${longitude}&destinations=${string}&key=AIzaSyAm8VcTZZ0P2oJCVLZ4ZDy5RK2UYxMxDlc`)
@@ -60,14 +63,14 @@ export default class Home extends Component {
         });
      })
    }
+
   fetchLocation = () => {
     // console.log("fetchLocation!!!");
     return axios
       .get(
-        `https://www.hikingproject.com/data/get-trails?lat=${this.state.latitude}&lon=${this.state.longitude}&maxDistance=10&key=200430061-384fefbb8ceed621af7cea7e5ab597b2`
+        `https://www.hikingproject.com/data/get-trails?lat=${this.state.latitude}&lon=${this.state.longitude}&maxDistance=${this.state.distanceChoice}&key=200430061-384fefbb8ceed621af7cea7e5ab597b2`
       )
       .then(res => {
-        // console.log("Res Hiking!!!!", res.data.trails);
         this.setState({
           markers: res.data.trails
         });
@@ -76,9 +79,18 @@ export default class Home extends Component {
         console.log(err)
       })
   };
+
   coordinateString = () => {
     return this.state.markers.map(el=> {return el.latitude+"%2C"+el.longitude+"%7C"}).join('').slice(0,-3)
     // console.log("coorStr=>",output,this.state.markers);
+  }
+
+  selectDistance = async(event) => {
+    console.log("selected distance")
+    await this.setState({
+      distanceChoice: Number(event.target.value)
+    })
+     await this.fetchLocation()
   }
 
   render() {
@@ -88,8 +100,9 @@ export default class Home extends Component {
         <div className="home-main-container">
           <SideBar distances={distances} trails={markers} currentLon={longitude} currentLat={latitude}/>
           <Map markers={markers} latitude={latitude} longitude={longitude} userIP={userIP}/>
-          <DistanceMenu/>
-          <SortMenu/>
+          <DistanceMenu selectDistance={this.selectDistance}/>
+          <p>latitude: {this.state.latitude}</p>
+          <p>longitude: {this.state.longitude}</p>
         </div>
 
       </React.Fragment>
