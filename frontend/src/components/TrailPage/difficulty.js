@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../../stylesheets/difficultyBar.css'
+import '../../css/difficultyBar.css'
 
 const Difficulty = ({difficulty}) => {
 

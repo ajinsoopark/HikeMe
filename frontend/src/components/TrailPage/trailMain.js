@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 
-// import Info from './info'
-// import TrailImg from './trailImg'
-// import StarRating from './starRating'
+import Info from './info'
+import TrailImg from './trailImg'
+import StarRating from './starRating'
 import Difficulty from './difficulty'
 import FocusMap from './focusMap'
 
-import '../../stylesheets/trailMain.css'
+import '../../css/trailMain.css'
 
 class TrailMain extends Component {
     constructor () {
@@ -105,9 +105,6 @@ class TrailMain extends Component {
                  ratingCount={ratingCount}/>
                 <Difficulty
                  difficulty={difficulty}/> 
-                <StarRating
-                 starRating={starRating}
-                 ratingCount={ratingCount}/>
                 <FocusMap
                  longitude={longitude}
                  latitude={latitude}/>

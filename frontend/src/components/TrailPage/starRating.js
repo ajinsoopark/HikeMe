@@ -1,3 +1,11 @@
 import React from 'react'
 
-const StarRating = ({  })
+const StarRating = ({  }) => {
+    return (
+        <div className='starRatingContainer'>
+            starrating
+        </div>
+    )
+}
+
+export default StarRating
