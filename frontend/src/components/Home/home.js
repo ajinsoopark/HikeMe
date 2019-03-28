@@ -106,15 +106,48 @@ export default class Home extends Component {
   };
 
   handleSort = e => {
-    // dif dis len
-    switch (e.target.value) {
-      case "dif":
-      case "dis":
+    let { markers } = this.state;
+    let newMarkers = markers.slice(0);
+    switch(e.target.value) {
       case "len":
-      default:
-        break;
+      newMarkers.sort(this.lengthComparator)
+      break;
+      case "dis":
+      newMarkers.sort(this.distanceComparator)
+      break;
+      case "dif":
+      newMarkers.sort(this.difficultyComparator)
+      break;
+      console.log("dif=>",newMarkers)
     }
+    this.setState({
+      markers: newMarkers
+    })
   };
+
+  //three helper custom comparators
+  lengthComparator = (a, b) => {
+    return a.length-b.length
+  }
+
+  distanceComparator = (a, b) => {
+    return parseFloat(a.distance) - parseFloat(b.distance)
+  }
+
+  difficultyComparator = (a, b) => {
+    return this.levelToNum(a.difficulty)-this.levelToNum(b.difficulty)
+  }
+
+  levelToNum = (level) => {
+      switch (level) {
+          case 'green': return 1
+          case 'greenBlue': return 2
+          case 'blue': return 3
+          case 'blueBlack': return 4
+          case 'black': return 5
+          default: return ''
+      }
+  }
 
   selectDistance = async event => {
     console.log("selected distance");
