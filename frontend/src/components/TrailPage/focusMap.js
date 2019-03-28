@@ -1,6 +1,8 @@
 import React from 'react'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 
+import '../../css/focusMap.css'
+
 const FocusMap = props => {
     let { latitude, longitude } = props;
     const MyMapComponent = withScriptjs(
@@ -15,13 +17,13 @@ const FocusMap = props => {
 
 let time = new Date(Date.now());
 time = time.toString();
-
+ 
 return (
   <div className="map-container">
   <MyMapComponent
     googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5uKfMriNA73mQgW_ZRelAixBLEdqT-Xg&v=3.exp&libraries=geometry,drawing,places"
     loadingElement={<div style={{ height: `100%` }} />}
-    containerElement={<div style={{ height: `400px` }} />}
+    containerElement={<div className="focusMap" style={{ height: `400px` }} />}
     mapElement={<div style={{ height: `100%` }} />}
   />
   </div>
@@ -30,4 +32,3 @@ return (
 
 
 export default FocusMap
-

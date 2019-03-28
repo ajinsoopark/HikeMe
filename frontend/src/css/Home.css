@@ -45,6 +45,12 @@
   height: 500px;
 }
 
+
+.sidebar-container {
+  width: 30vw;
+  height: auto;
+}
+
 .home-menus-container {
   display: flex;
   flex-direction: column;
