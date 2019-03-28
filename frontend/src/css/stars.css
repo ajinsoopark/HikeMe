@@ -1,0 +1,16 @@
+.filledStar {
+    fill: #fde16d;
+}
+
+.emptyStar {
+    fill: #b1b1b1;
+}
+
+.ratingLabel {
+    text-decoration: underline;
+}
+
+.stars {
+    display: flex;
+    flex-direction: row;
+}

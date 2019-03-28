@@ -6,6 +6,12 @@
     border: 2px solid black;
 }
 
+.emptyBar {
+    background-color: whitesmoke;
+    width: 20%;
+    height: 100%;
+}
+
 .level1 {
     background-image: linear-gradient(to right, #FEEC35, #FBCC30);
     width: 20%;
@@ -34,4 +40,8 @@
     background-image: linear-gradient(to right, #E3312B, #E2212D);
     width: 20%;
     height: 100%;
+}
+
+.trailLabel {
+    text-decoration: underline;
 }
