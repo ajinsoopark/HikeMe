@@ -6,15 +6,15 @@ const TrailImg = (props) => {
     <>
      {
       !imageUrl ?
-        <img src='http://appalachiantrail.org/images/default-source/default-album/trailfocus.jpg?sfvrsn=2' />
+        <img src='http://appalachiantrail.org/images/default-source/default-album/trailfocus.jpg?sfvrsn=2' alt='default-img'/>
         :
       <>
-      <img className='image-url' src={imageUrl} />
-      <form action={trailUrl}>
-        <input type='submit' target='_blank' onClick={`window.open(${trailUrl}); return false`} value='See A Map of This Trail'  />
-      </form>
+        <img className='image-url' src={imageUrl} alt='trail-img' />
       </>
     }
+    <a href={trailUrl}>
+     See A Map of This Trail
+    </a>
     </>
   )
 }
