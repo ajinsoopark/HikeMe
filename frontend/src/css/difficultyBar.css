@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     position: relative;
-    left: 520px;
+    /* left: 520px; */
     height: 2.7vh;
     width: 8vw;
     border: 2px solid black;
