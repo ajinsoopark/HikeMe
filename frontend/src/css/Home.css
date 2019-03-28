@@ -1,0 +1,18 @@
+.home-main-container {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+.sidebar-container img {
+  height: 100px;
+  width: 100px;
+}
+
+.tile-container {
+  display: flex;
+  border: 1px solid black;
+}
+
+.tile-container .tile-info {
+  margin-left: 20px;
+}
