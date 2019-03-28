@@ -4,7 +4,9 @@ import axios from "axios";
 import Map from "./map.js";
 import SideBar from "./sidebar.js";
 import DistanceMenu from "./distanceMenu.js";
-import SortMenu from './sortMenu.js';
+
+import SearchBox from "./searchbox.js";
+import SortMenu from "./sortMenu.js";
 
 import "../../css/Home.css";
 
@@ -17,7 +19,8 @@ export default class Home extends Component {
       longitude: "",
       userIP: "",
       distances: [],
-      distanceChoice: 10
+      distanceChoice: 10,
+      searchInput: ""
     };
   }
 
@@ -108,49 +111,54 @@ export default class Home extends Component {
   handleSort = e => {
     let { markers } = this.state;
     let newMarkers = markers.slice(0);
-    switch(e.target.value) {
+    switch (e.target.value) {
       case "len":
-      newMarkers.sort(this.lengthComparator)
-      break;
+        newMarkers.sort(this.lengthComparator);
+        break;
       case "dis":
-      newMarkers.sort(this.distanceComparator)
-      break;
+        newMarkers.sort(this.distanceComparator);
+        break;
       case "dif":
-      newMarkers.sort(this.difficultyComparator)
-      break;
-      console.log("dif=>",newMarkers)
+        newMarkers.sort(this.difficultyComparator);
+        break;
+        console.log("dif=>", newMarkers);
     }
     this.setState({
       markers: newMarkers
-    })
+    });
   };
 
   //three helper custom comparators
   lengthComparator = (a, b) => {
-    return a.length-b.length
-  }
+    return a.length - b.length;
+  };
 
   distanceComparator = (a, b) => {
-    return parseFloat(a.distance) - parseFloat(b.distance)
-  }
+    return parseFloat(a.distance) - parseFloat(b.distance);
+  };
 
   difficultyComparator = (a, b) => {
-    return this.levelToNum(a.difficulty)-this.levelToNum(b.difficulty)
-  }
+    return this.levelToNum(a.difficulty) - this.levelToNum(b.difficulty);
+  };
 
-  levelToNum = (level) => {
-      switch (level) {
-          case 'green': return 1
-          case 'greenBlue': return 2
-          case 'blue': return 3
-          case 'blueBlack': return 4
-          case 'black': return 5
-          default: return ''
-      }
-  }
+  levelToNum = level => {
+    switch (level) {
+      case "green":
+        return 1;
+      case "greenBlue":
+        return 2;
+      case "blue":
+        return 3;
+      case "blueBlack":
+        return 4;
+      case "black":
+        return 5;
+      default:
+        return "";
+    }
+  };
 
   selectDistance = async event => {
-    console.log("selected distance");
     await this.setState({
       distanceChoice: Number(event.target.value)
     });
@@ -158,11 +166,48 @@ export default class Home extends Component {
     await this.getDistanceData(this.coordinateString());
   };
 
+  searchCoordinates = event => {
+    event.preventDefault();
+    axios
+      .get(
+        `https://maps.googleapis.com/maps/api/geocode/json?address=${
+          this.state.searchInput
+        }&key=AIzaSyAm8VcTZZ0P2oJCVLZ4ZDy5RK2UYxMxDlc`
+      )
+      .then(res => {
+        this.setState({
+          latitude: res.data.results[0].geometry.location.lat,
+          longitude: res.data.results[0].geometry.location.lng,
+          searchInput: ""
+        });
+      })
+      .then(() => {
+        this.fetchLocation().then(() => {
+          this.getDistanceData(this.coordinateString());
+        });
+      });
+  };
+
+  handleSearchInput = event => {
+    event.preventDefault();
+    this.setState({
+      searchInput: event.target.value
+    });
+  };
+
   render() {
-    const { markers, latitude, longitude, userIP, distances, distanceChoice } = this.state;
+    const {
+      markers,
+      latitude,
+      longitude,
+      userIP,
+      distances,
+      distanceChoice
+    } = this.state;
     return (
       <React.Fragment>
         <div className="home-main-container">
+
           <SideBar
             distances={distances}
             trails={markers}
@@ -176,8 +221,15 @@ export default class Home extends Component {
             userIP={userIP}
             distanceChoice={distanceChoice}
           />
-          <DistanceMenu selectDistance={this.selectDistance} />
-          <SortMenu handleSort={this.handleSort} />
+          <div className="home-menus-container">
+            <DistanceMenu selectDistance={this.selectDistance} />
+            <SortMenu handleSort={this.handleSort} />
+            <SearchBox
+              handleSearchInput={this.handleSearchInput}
+              searchCoordinates={this.searchCoordinates}
+              searchInput={this.state.searchInput}
+            />
+          </div>
         </div>
       </React.Fragment>
     );

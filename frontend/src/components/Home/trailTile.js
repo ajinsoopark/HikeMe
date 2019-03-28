@@ -1,4 +1,5 @@
 import React from 'react';
+import Difficulty from '../TrailPage/difficulty';
 
 const TrailTile  = ({currentLon, currentLat, difficulty, length, imgSqSmall, id, distance}) => {
 
@@ -9,7 +10,8 @@ const TrailTile  = ({currentLon, currentLat, difficulty, length, imgSqSmall, id,
       <img alt="trail" src={imgSqSmall ? imgSqSmall : defaultImg}/>
       <div className="tile-info">
         <p>Length: {length} miles</p>
-        <p>Difficulty: {difficulty}</p>
+        {/*<p>Difficulty: {difficulty}</p>*/}
+        <p className="tile-difficulty">Difficulty:<Difficulty difficulty={difficulty}/></p>
         <p>Distance: {distance}</p>
       </div>
     </div>
