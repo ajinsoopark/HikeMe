@@ -1,0 +1,19 @@
+a {
+  color: whitesmoke;
+  text-decoration: none;
+  font-family: 'QuickSand', sans-serif;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #fee123;
+}
+
+p, h1, h2 {
+  font-family: 'QuickSand', sans-serif;
+  font-size: 18px;
+  color: black;
+}

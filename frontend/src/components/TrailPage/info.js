@@ -1,5 +1,7 @@
 import React from 'react'
 
+import '../../css/info.css'
+
 const Info = (props) => {
     const {name, summary, trailLength, location, elevation, conditionDate, conditionStatus, conditionDetails, ascent} = props
   return (
