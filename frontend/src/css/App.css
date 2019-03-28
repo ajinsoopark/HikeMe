@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500|BenchNine:300,400,700');
+
+body {
+ background-image: linear-gradient(to left, #1b5633
+, #71b280);
+}
+
+a {
+  color: #fee123;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: whitesmoke;
+}
+
+p {
+  font-family: 'QuickSand', sans-serif;
+  font-size: 14px;
+  color: black;
+}
+
+.title {
+  font-family: 'BenchNine', sans-serif;
+  font-size: 36px;
+  color: whitesmoke;
+}
+
+.small-title {
+  font-family: 'BenchNine', sans-serif;
+  font-size: 18px;
+  color: #fee123;
+}
