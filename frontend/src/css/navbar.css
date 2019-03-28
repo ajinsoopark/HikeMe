@@ -24,6 +24,10 @@
 
 .navText {
     padding-left: 10vw;
+    color: black;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
 }
 
 .navSTitle {

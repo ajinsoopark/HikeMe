@@ -29,7 +29,6 @@ const Difficulty = ({difficulty}) => {
         console.log(difficulty)
         return (
             <div className='difficultyContainer'>
-                <p className='trailLabel'>Trail difficulty:</p>
                 <div className='levelBar'>
                     <div className={ levelToNum(difficulty) >= 1 ? 'level1' : 'emptyBar' }></div>
                     <div className={ levelToNum(difficulty) >= 2 ? 'level2' : 'emptyBar' }></div>
