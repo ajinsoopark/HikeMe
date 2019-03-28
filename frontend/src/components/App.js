@@ -12,6 +12,7 @@ class App extends Component {
       <div className='mainContainer'>
         <Switch>
             <Route exact path='/' component={ Home }/>
+
             <Route path='/trail/:id' component={ TrailMain }/>
         </Switch>
       </div>
