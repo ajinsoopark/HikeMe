@@ -2,7 +2,7 @@ import React from 'react';
 import TrailTile from './trailTile.js';
 import { Link } from 'react-router-dom';
 
-const SideBar = ({trails, currentLon, currentLat, distances}) => {
+const SideBar = ({trails, currentLon, currentLat}) => {
   console.log("inside sidebar =>", trails);
   //dummy data
 
@@ -15,7 +15,7 @@ const SideBar = ({trails, currentLon, currentLat, distances}) => {
                 length={trail.length}
                 imgSqSmall={trail.imgSqSmall}
                 id={trail.id}
-                distance={distances[i]}
+                distance={trail.distance}
               />
             </Link>
   });

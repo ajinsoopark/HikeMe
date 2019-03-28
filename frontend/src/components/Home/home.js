@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import Map from './map.js';
 import SideBar from './sidebar.js';
-import DistanceMenu from './distanceMenu.js';
+// import DistanceMenu from './distanceMenu.js';
 import SortMenu from './sortMenu.js';
 
 import '../../css/Home.css';
@@ -51,12 +51,14 @@ export default class Home extends Component {
        })
   }
   getDistanceData = (string) => {
-    let {longitude, latitude} = this.state;
+    let {longitude, latitude, markers} = this.state;
      axios.get(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${latitude},${longitude}&destinations=${string}&key=AIzaSyAm8VcTZZ0P2oJCVLZ4ZDy5RK2UYxMxDlc`)
      .then(res => {
        let normalizeDistance = res.data.rows[0].elements.map(el => {return el = el.distance.text})
+       let addedDistance = markers.slice();
+       addedDistance.forEach((trail,i) => {trail.distance = normalizeDistance[i]})
        this.setState({
-          distances: normalizeDistance
+          markers: addedDistance
         });
      })
    }
@@ -81,15 +83,20 @@ export default class Home extends Component {
     // console.log("coorStr=>",output,this.state.markers);
   }
 
+  handleSort = () => {
+    // dif dis len
+
+  }
+
   render() {
     const {markers, latitude, longitude, userIP, distances} = this.state
     return (
       <React.Fragment>
         <div className="home-main-container">
-          <SideBar distances={distances} trails={markers} currentLon={longitude} currentLat={latitude}/>
-          <Map markers={markers} latitude={latitude} longitude={longitude} userIP={userIP}/>
-          <DistanceMenu/>
-          <SortMenu/>
+          {/*<DistanceMenu/>*/}
+          <SortMenu handleSort={this.handleSort} />
+        <SideBar trails={markers} currentLon={longitude} currentLat={latitude}/>
+        <Map markers={markers} latitude={latitude} longitude={longitude} userIP={userIP}/>
         </div>
 
       </React.Fragment>
