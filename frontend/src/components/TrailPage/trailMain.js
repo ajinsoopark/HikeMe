@@ -67,7 +67,7 @@ class TrailMain extends Component {
     }
 
     render () {
-
+      
         const { name, 
                 summary, 
                 difficulty, 
@@ -82,10 +82,10 @@ class TrailMain extends Component {
                 trailUrl, 
                 ascent, 
                 elevation,
-                latitude,
-                longitude } = this.state
-
-            return (
+                longitude,
+                latitude} = this.state
+        console.log(this.state)
+        return (
             <div className='trailMainContainer'>
                <TrailImg
                  imageUrl={imageUrl}
