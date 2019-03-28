@@ -10,9 +10,9 @@ class App extends Component {
     return (
       <>
       <div className='mainContainer'>
+        <Route component={ NavBar }/>
         <Switch>
             <Route exact path='/' component={ Home }/>
-
             <Route path='/trail/:id' component={ TrailMain }/>
         </Switch>
       </div>
