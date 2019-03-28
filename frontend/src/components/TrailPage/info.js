@@ -21,9 +21,15 @@ const Info = (props) => {
             <p className='trail-ascend'>Ascend: {ascent} feet</p>
             <p className ='trail-elevation'>Elevation: {elevation} feet</p>
             <h2> Current Trail Conditions</h2>
-            <p className='condition-status'>{conditionStatus}</p>
-            <p className='condition-details'>{conditionDetails}</p>
-            <p className='condition-date'>{conditionDate}</p>
+            {conditionStatus === "Unknown" ?
+              <p className='condition-status'>Condition Status: Not unavailable</p>
+              :
+            <>
+              <p className='condition-status'>{conditionStatus}</p>
+              <p className='condition-details'>{conditionDetails}</p>
+              <p className='condition-date'>{conditionDate}</p>
+            </>
+            }
           </div>
 
       </div>
@@ -31,5 +37,7 @@ const Info = (props) => {
     </>
   )
 }
+
+
 
 export default Info
