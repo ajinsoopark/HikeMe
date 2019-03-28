@@ -11,7 +11,7 @@ const TrailImg = (props) => {
       <>
       <img className='image-url' src={imageUrl} />
       <form action={trailUrl}>
-        <input type='submit' target='_blank' onclick={`window.open(${trailUrl}); return false`} value='See A Map of This Trail'  />
+        <input type='submit' target='_blank' onClick={`window.open(${trailUrl}); return false`} value='See A Map of This Trail'  />
       </form>
       </>
     }
