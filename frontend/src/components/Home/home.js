@@ -3,6 +3,8 @@ import axios from 'axios';
 
 import Map from './map.js';
 import SideBar from './sidebar.js';
+import DistanceMenu from './distanceMenu.js';
+import SortMenu from './sortMenu.js';
 
 import '../../css/Home.css';
 
@@ -86,6 +88,8 @@ export default class Home extends Component {
         <div className="home-main-container">
           <SideBar distances={distances} trails={markers} currentLon={longitude} currentLat={latitude}/>
           <Map markers={markers} latitude={latitude} longitude={longitude} userIP={userIP}/>
+          <DistanceMenu/>
+          <SortMenu/>
         </div>
 
       </React.Fragment>
