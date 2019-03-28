@@ -1,0 +1,32 @@
+.home-main-container {
+  /* display: grid;
+  grid-template-columns: 30% 70%; */
+  display: flex;
+  flex-direction: row;
+  /* grid-template-rows: 20% 80%; */
+  padding-top: 55px;
+}
+
+.sidebar-container img {
+  height: 100px;
+  width: 100px;
+}
+
+.tile-container {
+  display: flex;
+  border: 1px solid black;
+}
+
+.tile-container .tile-info {
+  margin-left: 20px;
+}
+
+.map-container {
+  width: 70vw; 
+  height: 500px; 
+}
+
+.sidebar-container {
+  width: 30vw; 
+  height: auto;
+}

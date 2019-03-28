@@ -7,7 +7,7 @@ import StarRating from './starRating'
 import Difficulty from './difficulty'
 import FocusMap from './focusMap'
 
-import '../../stylesheets/trailMain.css'
+import '../../css/trailMain.css'
 
 class TrailMain extends Component {
     constructor () {
@@ -67,26 +67,27 @@ class TrailMain extends Component {
     }
 
     render () {
-        const { name,
-                summary,
-                difficulty,
-                starRating,
-                ratingCount,
-                trailLength,
-                location,
-                imageUrl,
-                conditionDetails,
-                conditionStatus,
-                conditionDate,
-                trailUrl,
-                ascent,
+      
+        const { name, 
+                summary, 
+                difficulty, 
+                starRating, 
+                ratingCount, 
+                trailLength, 
+                location, 
+                imageUrl, 
+                conditionDetails, 
+                conditionStatus, 
+                conditionDate, 
+                trailUrl, 
+                ascent, 
                 elevation,
                 longitude,
                 latitude} = this.state
         console.log(this.state)
         return (
             <div className='trailMainContainer'>
-            <TrailImg
+               <TrailImg
                  imageUrl={imageUrl}
                  trailUrl={trailUrl}/>
                <Info
@@ -98,12 +99,12 @@ class TrailMain extends Component {
                  conditionStatus={conditionStatus}
                  conditionDetails={conditionDetails}
                  ascent={ascent}
-                 elevation={elevation}/> */}
-                <Difficulty
-                 difficulty={difficulty}/>
-                {/* <StarRating
+                 elevation={elevation}/>
+               <StarRating
                  starRating={starRating}
-                 ratingCount={ratingCount}/> */}
+                 ratingCount={ratingCount}/>
+                <Difficulty
+                 difficulty={difficulty}/> 
                 <FocusMap
                  longitude={longitude}
                  latitude={latitude}/>
