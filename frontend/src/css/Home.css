@@ -26,6 +26,10 @@
   height: 100px;
 }
 
+.tile-container p {
+  margin-bottom: 10px;
+}
+
 .tile-container:hover {
   background: #fee123;
   text-decoration: none;
@@ -54,6 +58,7 @@
 .tile-difficulty {
   display: flex;
   flex-direction: row;
-  height: 20px;
+  height: 24px;
   overflow: hidden;
+  padding-left: 2px;
 }
