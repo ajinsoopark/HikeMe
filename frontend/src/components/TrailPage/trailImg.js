@@ -10,7 +10,7 @@ const TrailImg = (props) => {
       !imageUrl ?
         <img className='image' src='http://appalachiantrail.org/images/default-source/default-album/trailfocus.jpg?sfvrsn=2' alt='default-img'/>
         :
-      <>
+      <> 
       <div>
         <div className="img-wrapper">
           <img className='image' src={imageUrl} alt='trail-img' />

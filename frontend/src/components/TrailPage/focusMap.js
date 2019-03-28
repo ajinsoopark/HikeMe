@@ -17,7 +17,7 @@ const FocusMap = props => {
 
 let time = new Date(Date.now());
 time = time.toString();
-
+ 
 return (
   <div className="map-container">
   <MyMapComponent
