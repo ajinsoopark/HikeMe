@@ -207,11 +207,7 @@ export default class Home extends Component {
     return (
       <React.Fragment>
         <div className="home-main-container">
-          <SearchBox
-            handleSearchInput={this.handleSearchInput}
-            searchCoordinates={this.searchCoordinates}
-            searchInput={this.state.searchInput}
-          />
+
           <SideBar
             distances={distances}
             trails={markers}
@@ -228,6 +224,11 @@ export default class Home extends Component {
           <div className="home-menus-container">
             <DistanceMenu selectDistance={this.selectDistance} />
             <SortMenu handleSort={this.handleSort} />
+            <SearchBox
+              handleSearchInput={this.handleSearchInput}
+              searchCoordinates={this.searchCoordinates}
+              searchInput={this.state.searchInput}
+            />
           </div>
         </div>
       </React.Fragment>
