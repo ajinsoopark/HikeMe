@@ -30,13 +30,13 @@ const Difficulty = ({difficulty}) => {
         return (
             <div className='difficultyContainer'>
                 <div className='levelBar'>
-                    <div className={ levelToNum(difficulty) >= 1 ? 'level1' : null }></div>
-                    <div className={ levelToNum(difficulty) >= 2 ? 'level2' : null }></div>
-                    <div className={ levelToNum(difficulty) >= 3 ? 'level3' : null }></div>
-                    <div className={ levelToNum(difficulty) >= 4 ? 'level4' : null }></div>
-                    <div className={ levelToNum(difficulty) >= 5 ? 'level5' : null }></div>
+                    <div className={ levelToNum(difficulty) >= 1 ? 'level1' : 'emptyBar' }></div>
+                    <div className={ levelToNum(difficulty) >= 2 ? 'level2' : 'emptyBar' }></div>
+                    <div className={ levelToNum(difficulty) >= 3 ? 'level3' : 'emptyBar' }></div>
+                    <div className={ levelToNum(difficulty) >= 4 ? 'level4' : 'emptyBar' }></div>
+                    <div className={ levelToNum(difficulty) >= 5 ? 'level5' : 'emptyBar' }></div>
                 </div>
-                <div className='difficulty'>{ levelToText(difficulty) }</div>
+                <p className='difficulty'>{ levelToText(difficulty) }</p>
             </div>
         )
 }

@@ -1,13 +1,39 @@
+* {
+    margin: 0;
+}
+
 .homeLink {
-    height: 1vh;
-    width: 3vw;
+    height: 5vh;
+    width: 5vw;
 }
 
 .homeImg {
-    height: 7vh;
-    width: 4.3vw;
+    height: 70px;
+    width: 70px;
 }
 
 .navBarContainer {
+    display: flex;
+    flex-direction: row;
     position: fixed;
+
 }
+
+    background-color: #fee123;
+    width: 100%;
+    z-index: 10;
+    border-bottom: 1px solid black;
+}
+
+.navText {
+    padding-left: 10vw;
+    color: black;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+.navSTitle {
+    margin: 0px;
+}
+

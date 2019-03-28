@@ -66,6 +66,17 @@ class TrailMain extends Component {
         }
     }
 
+    levelToText = (level) => {
+        switch (level) {
+            case 'green': return 'Very Easy'
+            case 'greenBlue': return 'Easy'
+            case 'blue': return 'Average'
+            case 'blueBlack': return 'Difficult'
+            case 'black': return 'Very Difficult'
+            default: return ''
+        }
+    }
+
     render () {
       
         const { name, 
@@ -103,6 +114,7 @@ class TrailMain extends Component {
                <StarRating
                  starRating={starRating}
                  ratingCount={ratingCount}/>
+                <p className='trailLabel'>Trail difficulty:</p>
                 <Difficulty
                  difficulty={difficulty}/> 
                 <FocusMap
