@@ -159,7 +159,6 @@ export default class Home extends Component {
   };
 
   selectDistance = async event => {
-    console.log("selected distance");
     await this.setState({
       distanceChoice: Number(event.target.value)
     });
@@ -176,7 +175,6 @@ export default class Home extends Component {
         }&key=AIzaSyAm8VcTZZ0P2oJCVLZ4ZDy5RK2UYxMxDlc`
       )
       .then(res => {
-        console.log(res);
         this.setState({
           latitude: res.data.results[0].geometry.location.lat,
           longitude: res.data.results[0].geometry.location.lng,
@@ -192,7 +190,6 @@ export default class Home extends Component {
 
   handleSearchInput = event => {
     event.preventDefault();
-    console.log("target!!!!", event.target.value);
     this.setState({
       searchInput: event.target.value
     });
