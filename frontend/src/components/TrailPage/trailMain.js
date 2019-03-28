@@ -101,9 +101,9 @@ class TrailMain extends Component {
                  elevation={elevation}/> */}
                 <Difficulty
                  difficulty={difficulty}/> 
-                {/* <StarRating
+                <StarRating
                  starRating={starRating}
-                 ratingCount={ratingCount}/> */}
+                 ratingCount={ratingCount}/>
                 <FocusMap
                  longitude={longitude}
                  latitude={latitude}/>
