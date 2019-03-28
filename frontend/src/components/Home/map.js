@@ -5,6 +5,7 @@ import {
   GoogleMap,
   Marker
 } from "react-google-maps";
+import {Link} from "react-router-dom"
 
 const Map = props => {
   let { markers, latitude, longitude, distanceChoice } = props;
@@ -16,10 +17,13 @@ const Map = props => {
       >
         {markers.map(marker => {
           return (
+            <Link to={"/trail/" + marker.id}>
             <Marker
               position={{ lat: marker.latitude, lng: marker.longitude }}
               key={marker.id}
+              clickable="true"
             />
+            </Link>
           );
         })}
       </GoogleMap>
