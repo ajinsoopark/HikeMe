@@ -10,7 +10,7 @@ class NavBar extends Component {
             <div className='navBarContainer'>
                 <div className='leftNav'>
                     <NavLink className='homeLink' to={ '/' }>
-                        <img className='homeImg' src='https://files.slack.com/files-pri/TCVA3PF24-FHF9QH2CE/hikeme_logo.png' alt='home link' />
+                        <img className='homeImg' src='https://i.imgur.com/9lzUu2x.png' alt='home link' />
                     </NavLink>
                 </div>
                 <div className='navText'>
