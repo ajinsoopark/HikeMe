@@ -3,7 +3,8 @@ import React from "react"
 const DistanceMenu = (props) => {
   return (
     <div className="distance_select_container">
-    <select onChange={props.selectDistance}>
+    <label htmlFor='distanceSelector'>Distance:</label>
+    <select id='distanceSelector' onChange={props.selectDistance}>
     <option value="0" name="distance_option">0 Miles</option>
     <option value="5" name="distance_option">5 Miles</option>
     <option value="10" name="distance_option" selected="selected">10 Miles</option>

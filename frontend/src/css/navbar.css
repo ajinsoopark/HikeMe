@@ -12,6 +12,10 @@
     width: 70px;
 }
 
+.leftNav {
+    padding-left: 5%;
+}
+
 .navBarContainer {
     display: flex;
     flex-direction: row;
@@ -19,6 +23,7 @@
     background-color: #fee123;
     width: 100%;
     z-index: 10;
+    height: 10vh;
     border-bottom: 1px solid black;
 }
 

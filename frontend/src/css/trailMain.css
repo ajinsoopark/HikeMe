@@ -1,4 +1,18 @@
 .trailMainContainer {
-    padding-top: 74px;
-    /* text-align: center; */
+    margin-top: 10vh;
+    padding: 2%;
+    width: 80%;
+}
+
+.imageInfoContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.imageContainer {
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    width: 35vw;
 }

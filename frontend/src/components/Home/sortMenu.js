@@ -4,7 +4,8 @@ const SortMenu = ({trails, handleSort}) => {
 
   return (
     <div className="sort-menu-container">
-      <select defaultValue="1" onChange={handleSort}>
+      <label htmlFor='sortSelect'>Sort:</label>
+      <select id='sortSelect' defaultValue="1" onChange={handleSort}>
         <option disabled value="1">--SORT BY--</option>
         <option value="dif">Difficulty</option>
         <option value="dis">Distance To Trail</option>

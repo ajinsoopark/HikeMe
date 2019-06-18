@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, withRouter } from 'react-router-dom'
 
 import Home from '../components/Home/home'
 import TrailMain from '../components/TrailPage/trailMain'
@@ -22,7 +22,7 @@ class App extends Component {
   }
 }
 
-export default App
+export default withRouter(App)
 
 // add it in the end :
 // <Route component={ NavBar }/>
