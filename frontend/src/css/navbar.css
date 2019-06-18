@@ -12,14 +12,34 @@
     width: 70px;
 }
 
+.leftNav {
+    padding-left: 5%;
+}
+
 .navBarContainer {
     display: flex;
     flex-direction: row;
+    align-items: center;
     position: fixed;
     background-color: #fee123;
     width: 100%;
     z-index: 10;
+    height: 10vh;
     border-bottom: 1px solid black;
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    .navBarContainer {
+        height: 8.5vh;
+    }
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .homeImg {
+        height: 17vw;
+        width: 17vw;
+        padding-left: 25%;
+    }
 }
 
 .navText {
@@ -30,7 +50,5 @@
     -webkit-text-stroke-color: black;
 }
 
-.navSTitle {
-    margin: 0px;
-}
+
 

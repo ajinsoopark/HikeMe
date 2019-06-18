@@ -24,7 +24,7 @@ const Info = (props) => {
             <p className ='trail-elevation'>Elevation: {elevation} feet</p>
             <h2> Current Trail Conditions</h2>
             {conditionStatus === "Unknown" ?
-              <p className='condition-status'>Condition Status: Not unavailable</p>
+              <p className='condition-status'>Condition Status: Not Available</p>
               :
             <>
               <p className='condition-status'>{conditionStatus}</p>

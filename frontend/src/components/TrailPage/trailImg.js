@@ -5,7 +5,7 @@ import '../../css/trailImg.css'
 const TrailImg = (props) => {
   const { imageUrl, trailUrl } = props
   return(
-    <>
+    <div className='imageContainer'>
      {
       !imageUrl ?
         <img className='image' src='http://appalachiantrail.org/images/default-source/default-album/trailfocus.jpg?sfvrsn=2' alt='default-img'/>
@@ -21,7 +21,7 @@ const TrailImg = (props) => {
     <a href={trailUrl}>
      See A Map of This Trail
     </a>
-    </>
+    </div>
   )
 }
 

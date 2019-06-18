@@ -15,11 +15,11 @@ const FocusMap = props => {
       ))
 );
 
-let time = new Date(Date.now());
-time = time.toString();
+// let time = new Date(Date.now());
+// time = time.toString();
  
 return (
-  <div className="map-container">
+  <div>
   <MyMapComponent
     googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5uKfMriNA73mQgW_ZRelAixBLEdqT-Xg&v=3.exp&libraries=geometry,drawing,places"
     loadingElement={<div style={{ height: `100%` }} />}

@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+// import axios from "axios";
 
 class SearchBox  extends React.Component {
   constructor() {
@@ -12,8 +12,8 @@ class SearchBox  extends React.Component {
   render() {
     return (
       <div className="searchbox_input">
-      <form onSubmit={this.props.searchCoordinates}>
-      <input value={this.props.searchInput} name="searchInput" placeholder="enter zipcode" onChange={this.props.handleSearchInput} />
+      <form id='searchForm' onSubmit={this.props.searchCoordinates}>
+      <input value={this.props.searchInput} name="searchInput" placeholder="Enter Zipcode" onChange={this.props.handleSearchInput} />
       <button type="submit" >Search</button>
       </form>
       </div>

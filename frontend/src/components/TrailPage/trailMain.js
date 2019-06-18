@@ -42,7 +42,6 @@ class TrailMain extends Component {
             // trailId = 7000108
             axios.get(`https://www.hikingproject.com/data/get-trails-by-id?ids=${trailId}&key=200430061-384fefbb8ceed621af7cea7e5ab597b2`)
             .then(res => {
-                console.log(res.data.trails)
                 let trail = res.data.trails[0]
                 this.setState({
                     name: trail.name,
@@ -78,7 +77,6 @@ class TrailMain extends Component {
     }
 
     render () {
-      
         const { name, 
                 summary, 
                 difficulty, 
@@ -95,28 +93,31 @@ class TrailMain extends Component {
                 elevation,
                 longitude,
                 latitude} = this.state
-        console.log(this.state)
         return (
             <div className='trailMainContainer'>
-               <TrailImg
-                 imageUrl={imageUrl}
-                 trailUrl={trailUrl}/>
-               <Info
-                 name={name}
-                 summary={summary}
-                 trailLength={trailLength}
-                 location={location}
-                 conditionDate={conditionDate}
-                 conditionStatus={conditionStatus}
-                 conditionDetails={conditionDetails}
-                 ascent={ascent}
-                 elevation={elevation}/>
-               <StarRating
-                 starRating={starRating}
-                 ratingCount={ratingCount}/>
-                <p className='trailLabel'>Trail difficulty:</p>
-                <Difficulty
-                 difficulty={difficulty}/> 
+                <div className='imageInfoContainer'>
+                    <TrailImg
+                        imageUrl={imageUrl}
+                        trailUrl={trailUrl}/>
+                    <div className='infoRatingContainer'>
+                        <Info
+                            name={name}
+                            summary={summary}
+                            trailLength={trailLength}
+                            location={location}
+                            conditionDate={conditionDate}
+                            conditionStatus={conditionStatus}
+                            conditionDetails={conditionDetails}
+                            ascent={ascent}
+                            elevation={elevation}/>
+                        <StarRating
+                        starRating={starRating}
+                        ratingCount={ratingCount}/>
+                        <p className='trailLabel'>Trail difficulty:</p>
+                        <Difficulty
+                        difficulty={difficulty}/>
+                    </div>
+                </div> 
                 <FocusMap
                  longitude={longitude}
                  latitude={latitude}/>

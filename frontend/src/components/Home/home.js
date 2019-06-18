@@ -25,7 +25,6 @@ export default class Home extends Component {
   }
 
   componentDidMount() {
-    console.log("triggered did mount");
     axios
       .get("https://jsonip.com/")
       .then(res => {
@@ -121,7 +120,7 @@ export default class Home extends Component {
       case "dif":
         newMarkers.sort(this.difficultyComparator);
         break;
-        console.log("dif=>", newMarkers);
+      default: return null
     }
     this.setState({
       markers: newMarkers
@@ -207,20 +206,6 @@ export default class Home extends Component {
     return (
       <React.Fragment>
         <div className="home-main-container">
-
-          <SideBar
-            distances={distances}
-            trails={markers}
-            currentLon={longitude}
-            currentLat={latitude}
-          />
-          <Map
-            markers={markers}
-            latitude={latitude}
-            longitude={longitude}
-            userIP={userIP}
-            distanceChoice={distanceChoice}
-          />
           <div className="home-menus-container">
             <DistanceMenu selectDistance={this.selectDistance} />
             <SortMenu handleSort={this.handleSort} />
@@ -228,6 +213,22 @@ export default class Home extends Component {
               handleSearchInput={this.handleSearchInput}
               searchCoordinates={this.searchCoordinates}
               searchInput={this.state.searchInput}
+            />
+          </div>
+          <div className='sideBarMapContainer'>
+            <SideBar
+              props={this.props} 
+              distances={distances}
+              trails={markers}
+              currentLon={longitude}
+              currentLat={latitude}
+            />
+            <Map
+              markers={markers}
+              latitude={latitude}
+              longitude={longitude}
+              userIP={userIP}
+              distanceChoice={distanceChoice}
             />
           </div>
         </div>
