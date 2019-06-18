@@ -117,3 +117,37 @@ p {
     height: 5vh;
   }
 }
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .home-main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+  }
+
+  .home-menus-container {
+    height: 18vh;
+    width: 78.5vw;
+    margin-left: 3.5%;
+  }
+
+  .sideBarMapContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-container {
+    width: 80vw;
+    height: 225px;
+  }
+  
+  .sidebar-container img {
+    width: 27vw;
+    height: 27vw;
+  }
+
+  .map-container {
+    width: 80vw;
+  }
+}

@@ -42,7 +42,6 @@ class TrailMain extends Component {
             // trailId = 7000108
             axios.get(`https://www.hikingproject.com/data/get-trails-by-id?ids=${trailId}&key=200430061-384fefbb8ceed621af7cea7e5ab597b2`)
             .then(res => {
-                console.log(res.data.trails)
                 let trail = res.data.trails[0]
                 this.setState({
                     name: trail.name,
@@ -78,7 +77,6 @@ class TrailMain extends Component {
     }
 
     render () {
-        console.log(this.props)
         const { name, 
                 summary, 
                 difficulty, 
