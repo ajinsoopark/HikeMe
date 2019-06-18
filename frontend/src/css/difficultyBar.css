@@ -1,11 +1,22 @@
 .levelBar {
     display: flex;
     flex-direction: row;
-    position: relative;
-    /* left: 520px; */
-    height: 2.7vh;
+    height: 2.5vh;
     width: 8vw;
-    border: 2px solid black;
+    border: 1px solid #000000;
+    white-space: nowrap;
+}
+
+select {
+    outline: none;
+}
+
+.barHome {
+    margin-left: 3%
+}
+
+.difficultyContainer {
+    width: 9vw;
 }
 
 .emptyBar {
@@ -24,26 +35,37 @@
     background-image: linear-gradient(to right, #FBCC30, #F29629);
     width: 20%;
     height: 100%;
+    margin-left: -2%;
 }
 
 .level3 {
     background-image: linear-gradient(to right, #F29629, #EA5C28);
     width: 20%;
     height: 100%;
+    margin-left: -2%;
 }
 
 .level4 {
     background-image: linear-gradient(to right, #EA5C28, #E3312B);
     width: 20%;
     height: 100%;
+    margin-left: -2%;
 }
 
 .level5 {
     background-image: linear-gradient(to right, #E3312B, #E2212D);
     width: 20%;
     height: 100%;
+    margin-left: -2%;
 }
 
 .trailLabel {
     text-decoration: underline;
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    .levelBar {
+        height: 1.6vh;
+        width: 7vw;
+    }
 }

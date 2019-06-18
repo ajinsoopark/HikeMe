@@ -4,6 +4,11 @@
   padding-top: 10vh;
 }
 
+.sideBarMapContainer {
+  display: flex;
+  flex-direction: row;
+}
+
 .mainContainer {
   display: flex;
   flex-direction: column;
@@ -23,14 +28,14 @@ p {
 }
 
 .sidebar-container img {
-  height: 100px;
-  width: 100px;
+  height: 9vw;
+  width: 9vw;
 }
 
 .tile-container {
   display: flex;
   background: #f7f7f7;
-  border-radius: 2px;
+  /* border-radius: 2px; */
   border: 1px solid white;
   height: 100px;
   padding: 2%;
@@ -47,7 +52,7 @@ p {
 }
 
 .tile-container .tile-info {
-  margin-left: 20px;
+  margin-left: 2vw;
 }
 
 .map-container {
@@ -96,4 +101,19 @@ p {
   height: 24px;
   overflow: hidden;
   padding-left: 2px;
+  color: black;
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+  .home-main-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home-menus-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 5vh;
+  }
 }

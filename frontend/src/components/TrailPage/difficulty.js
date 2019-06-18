@@ -2,7 +2,7 @@ import React from 'react'
 
 import '../../css/difficultyBar.css'
 
-const Difficulty = ({difficulty}) => {
+const Difficulty = ({path, difficulty}) => {
 
     const levelToText = (level) => {
         switch (level) {
@@ -28,14 +28,14 @@ const Difficulty = ({difficulty}) => {
 
         return (
             <div className='difficultyContainer'>
-                <div className='levelBar'>
+                <div className={`levelBar ${path === '/' ? 'barHome' : ''}`}>
                     <div className={ levelToNum(difficulty) >= 1 ? 'level1' : 'emptyBar' }></div>
                     <div className={ levelToNum(difficulty) >= 2 ? 'level2' : 'emptyBar' }></div>
                     <div className={ levelToNum(difficulty) >= 3 ? 'level3' : 'emptyBar' }></div>
                     <div className={ levelToNum(difficulty) >= 4 ? 'level4' : 'emptyBar' }></div>
                     <div className={ levelToNum(difficulty) >= 5 ? 'level5' : 'emptyBar' }></div>
                 </div>
-                <p className='difficulty'>{ levelToText(difficulty) }</p>
+                {path === '/' ? '' : <p className='difficulty'>{ levelToText(difficulty) }</p>}
             </div>
         )
 }

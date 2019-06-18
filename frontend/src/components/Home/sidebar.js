@@ -2,12 +2,12 @@ import React from 'react';
 import TrailTile from './trailTile.js';
 import { Link } from 'react-router-dom';
 
-const SideBar = ({trails, currentLon, currentLat}) => {
+const SideBar = ({props, trails, currentLon, currentLat}) => {
   //dummy data
-
   let mapTiles = trails.map((trail,i) => {
     return <Link key={i} to={`/trail/${trail.id}`}>
               <TrailTile
+                props={props}
                 currentLon={currentLon}
                 currentLat={currentLat}
                 difficulty={trail.difficulty}
