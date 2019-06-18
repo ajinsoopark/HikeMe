@@ -11,7 +11,7 @@ const TrailTile  = ({currentLon, currentLat, difficulty, length, imgSqSmall, id,
       <div className="tile-info">
         <p>Length: {length} miles</p>
         {/*<p>Difficulty: {difficulty}</p>*/}
-        <p className="tile-difficulty">Difficulty:<Difficulty difficulty={difficulty}/></p>
+        <div className="tile-difficulty">Difficulty:<Difficulty difficulty={difficulty}/></div>
         <p>Distance: {distance}</p>
       </div>
     </div>

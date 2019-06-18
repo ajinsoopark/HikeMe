@@ -25,7 +25,6 @@ export default class Home extends Component {
   }
 
   componentDidMount() {
-    console.log("triggered did mount");
     axios
       .get("https://jsonip.com/")
       .then(res => {
@@ -121,7 +120,7 @@ export default class Home extends Component {
       case "dif":
         newMarkers.sort(this.difficultyComparator);
         break;
-        console.log("dif=>", newMarkers);
+      default: return null
     }
     this.setState({
       markers: newMarkers

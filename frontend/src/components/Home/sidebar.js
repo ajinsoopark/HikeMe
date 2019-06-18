@@ -3,7 +3,6 @@ import TrailTile from './trailTile.js';
 import { Link } from 'react-router-dom';
 
 const SideBar = ({trails, currentLon, currentLat}) => {
-  console.log("inside sidebar =>", trails);
   //dummy data
 
   let mapTiles = trails.map((trail,i) => {

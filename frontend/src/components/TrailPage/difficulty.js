@@ -26,7 +26,6 @@ const Difficulty = ({difficulty}) => {
         }
     }
 
-        console.log(difficulty)
         return (
             <div className='difficultyContainer'>
                 <div className='levelBar'>
