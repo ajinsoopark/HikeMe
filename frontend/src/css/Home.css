@@ -75,7 +75,21 @@ p {
   border: 1px solid black;
   margin: 1%;
   padding: 1%;
+  width: 15vw;
   background-color: whitesmoke;
+}
+
+#searchForm input {
+  width: 90%;
+  
+}
+
+#distanceSelector {
+  width: 90%
+}
+
+#sortSelect {
+  width: 90%;
 }
 
 .distance_select_container {
