@@ -3,7 +3,7 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-map
 
 import '../../css/focusMap.css'
 
-const API_KEY = process.env.GOOGLE_API_KEY
+// const API_KEY = process.env.GOOGLE_API_KEY
 
 const FocusMap = props => {
     let { latitude, longitude } = props;

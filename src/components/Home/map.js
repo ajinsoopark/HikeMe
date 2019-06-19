@@ -6,7 +6,7 @@ import {
   Marker
 } from "react-google-maps";
 
-const API_KEY = process.env.GOOGLE_API_KEY
+// const API_KEY = process.env.GOOGLE_API_KEY
 
 // import {Link} from "react-router-dom"
 
