@@ -21,7 +21,7 @@ p {
 
 .sidebar-container {
   width: 30vw;
-  max-height: 500px;
+  max-height: 85vh;
   overflow: scroll;
   border: 1px solid black;
   margin: 1%;
@@ -57,7 +57,7 @@ p {
 
 .map-container {
   width: 50vw;
-  height: 50vh;
+  height: 85vh;
   border: 1px solid black;
   margin: 1%;
 }
@@ -129,6 +129,15 @@ p {
     flex-direction: row;
     align-items: center;
     height: 5vh;
+    width: 95.6%;
+  }
+
+  .map-container {
+    height: 70vh;
+  }
+
+  .sidebar-container {
+    height: 70vh;
   }
 }
 
