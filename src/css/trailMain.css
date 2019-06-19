@@ -39,6 +39,16 @@
         padding: 2%;
     }
 
+    .image {
+        border: 1px solid black;
+        background: white;
+    }
+
+    .imageContainer {
+        width: 83vw;
+        padding-bottom: 10%;
+    }
+
     .focusMap {
         width: 81.5vw;
         margin-left: -1vw;
