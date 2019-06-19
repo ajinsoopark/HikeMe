@@ -37,7 +37,7 @@ export default class Home extends Component {
         let apikey = "45c642a38d6e8f01dac07ba1f003505a";
         axios
           .get(
-            `https://api.ipstack.com/${this.state.userIP}?access_key=${apikey}`
+            `http://api.ipstack.com/${this.state.userIP}?access_key=${apikey}`
           )
           .then(res => {
             // console.log("result long/ lat!!!: ", res)
