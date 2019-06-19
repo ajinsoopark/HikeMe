@@ -3,6 +3,8 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-map
 
 import '../../css/focusMap.css'
 
+const API_KEY = process.env.GOOGLE_API_KEY
+
 const FocusMap = props => {
     let { latitude, longitude } = props;
     const MyMapComponent = withScriptjs(
@@ -21,7 +23,7 @@ const FocusMap = props => {
 return (
   <div>
   <MyMapComponent
-    googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5uKfMriNA73mQgW_ZRelAixBLEdqT-Xg&v=3.exp&libraries=geometry,drawing,places"
+    googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${API_KEY}&v=3.exp&libraries=geometry,drawing,places`}
     loadingElement={<div style={{ height: `100%` }} />}
     containerElement={<div className="focusMap" style={{ height: `400px` }} />}
     mapElement={<div style={{ height: `100%` }} />}
